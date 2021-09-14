@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <title>CSS cheatsheet</title>
+</head>
+<body>
+    <header class="header">
+        <h1>CSS Element CheatSheet</h1>
+        <p>This is a compilation of some useful CSS a quick description and a sample of the code involved</p>
+    </header>
+<!--we want a generous margin between sections so we can 
+    overlay a title box and offset it-->
+    <main>
+        <!-- flexbox row-->
+        <section>
+            <header class="main-header">
+                <h2>Flexbox Row</h2>
+            </header>
+            <article>
+                <p>Use these three properties to create a flexbox with a row layout.</p>
+            </article>
+            <figure class="align">
+                <pre>
+        .row {
+            display: flex;
+            flex-direction row;
+            flex-wrap: wrap;
+        }
+                </pre>
+            </figure>
+        </section>
+        <!-- flexbox column-->
+        <section>
+            <header class="main-header">
+                <h2>Flexbox Column</h2>
+            </header>
+            <article>
+                <p>Use this to create a Flexbox column layout.</p>
+            </article>
+            <figure>
+                <pre>
+        .column {
+            display: flex;
+            flex-direction column;
+        }
+            </pre>
+            </figure>
+        </section>
+        <!-- css grid layout-->
+        <section>
+            <header class="main-header">
+                <h2>CSS grid layout</h2>                
+            </header>
+            <article>
+                <p>Build a 12-column layout using CSS Grid.</p>
+            </article>
+            <figure>
+                <pre>
+        .grid {
+            display: grid; 
+            width: 100%; 
+            grid-template-columns: 
+                    repeat(12, 1fr); 
+        }
+                </pre>
+            </figure>
+        </section>
+        <!-- linear gradients-->
+        <section>
+            <header class="main-header">
+                <h2>Linear Gradients</h2>
+            </header>
+            <article>
+                <p>This will create a background linear gradient from top to bottom.</p>
+            </article>
+            <figure>
+                <pre>
+        .linear-gradient-background {
+            background-image: 
+            linear-gradient(
+            rgba(232, 102, 236, 0.3) 0%, 
+            linear-gradient(
+            rgba(232, 102, 236, 0.3) 100%);
+        }
+                </pre>                
+            </figure>
+        </section>
+        <!-- box transition glow-->
+        <section>
+            <header class="main-header">
+                <h2>Box Transitional Glow</h2>
+            </header>
+            <article>
+                <p>Use transitional and box shadows to glow on hover.</p>
+            </article>
+            <figure>
+                <pre>
+        .code-card .card-header {
+            border-radius: 8px
+            transitino: all 0.5s ease-in-out;
+        }
+
+        .code-card:hover .card-header {
+            box-shadow: inset 0px 0px 8px 
+            rgba(232, 102, 236, 1), 
+            0 0 15px rbga(232, 102, 236, 1);
+        }
+                </pre>
+            </figure>
+        </section>
+        <!-- overlay card with title-->
+        <section>
+            <header class="main-header">
+                <h2>Overlay Card with Title</h2>
+            </header>
+            <article>
+                <p>Use position properties and negative margins to raise elements higher than their natural starting point.</p>
+            </article>
+            <figure>
+                <pre>
+        .card-header {
+            position: relative;
+            margin-top: -20px;
+        }
+                </pre>
+            </figure>
+        </section>
+        <!--media screens-->
+        <section>
+            <header class="main-header">
+                <h2>Media Screens and Multiple Displays</h2>
+            </header>
+            <article>
+                <p>Creating responsive container boundries in anticipation of mobile (768px) or tablet (992px) users .</p>
+            </article>
+            <figure>
+                <pre>
+        @media screen and (max-width: 992px){
+            section {
+                width: 40%;
+            }
+        }
+                    
+        @media screen and (max-width: 768px){
+            section {
+                width: 75%;
+            }
+        }
+                </pre>
+            </figure>
+        </section>
+        <!--forms-->
+        <section>
+            <header class="main-header">
+                <h2>Forms</h2>
+            </header>
+            <article>
+                <p>Creating an interactive form to input user information. This one is actually in HTML</p>
+            </article>
+            <figure>
+                <pre>
+        &ltform>
+            &ltlabel for="name">Name:&lt/label>
+            &ltinput type="text" id="name" name="name">&ltbr>
+            &ltlabel for="email">Email:&lt/label>
+            &ltinput type="text" id="email" name="email">&ltbr>
+            &ltbutton type="button">Send&lt/button>
+         &lt/form>
+                </pre>
+            </figure>
+        </section>
+        <!--popup descriptions boxes-->
+        <section>
+            <header class="main-header">
+                <h2>Popup Description Boxes</h2>
+            </header>
+            <article>
+                <p>Create interactive descriptive bubbles of text when you hover over a word. First make the decription in HTML, Then the popup in CSS, then the hover action.</p>
+            </article>
+            <figure>
+                <pre>
+        &ltspan data-desc="commonly known as css">Cascading Style Sheets&lt/span>
+
+        span[data-desc] {
+            position: relative;
+            text-decoration: underline;
+            color: black;
+            cursor: grab;
+        }
+
+        span[data-desc]:hover::after {
+            content: attr(data-desc);
+            position: absolute;
+            left: 0px;
+            background-color: steelblue;
+            color: white;
+            bottom: 24px;
+        }
+                </pre>
+            </figure>
+        </section>
+        <!--making <pre> section text wrap-->
+        <section>
+            <header class="main-header">
+                <h2>&ltpre> Text Wrap</h2>
+            </header>
+            <article>
+                <p>This will wrap text when using the pre tag so it doesn't overflow the container without using a scroll bar. Alternatively you can use overflow-y for a column type orientation.</p>
+            </article>
+            <figure>
+                <pre>
+        pre {
+            overflow-x: clip;
+            word-wrap: break-word;
+            white-space: pre-wrap
+        }
+                </pre>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <h3>Made with ❤️ and CSS by Filip</h3>
+    </footer>
+</body>
+</html>

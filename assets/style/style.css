@@ -1,0 +1,119 @@
+:root {
+    --background: linear-gradient(rgba(75, 72, 253, 0.3) 0%, rgba(75, 72, 253, 0.7) 100%);
+    --headers: rgb(255, 138, 255);
+    --text: white;
+}
+
+body {
+    background: var(--background);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 2%;
+    color: var(--headers);  
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+/*all screen sizes*/
+section {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    border: 1px dashed white;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin-left: 20px;
+}
+
+p {
+    color: var(--text);
+}
+
+pre {
+    display: flex;
+    color: var(--text);
+    width: 90%;
+    margin-left: 10px;
+    font-size: 12px;
+    align-items: center;
+    overflow-x: clip;
+    word-wrap: break-word;
+    white-space: pre-wrap
+}
+
+.main-header {
+    background-color: rgb(121, 118, 255);
+    position: relative;
+    margin-top: -20px;
+    text-align: left;
+    text-indent: 2%;
+    color: var(--headers);
+    width: 90%;
+    border: 1px solid white;
+    border-radius: 15px;
+    align-items: left;
+}
+
+article {
+    padding: 20px;
+}
+
+.align {
+    align-items: left;
+}
+
+figure {
+    border-radius: 15px;
+    width: 90%;
+    background-image: linear-gradient(rgba(232, 102, 236, 0.3) 0%, rgba(232, 102, 236, 0.7) 100%);
+}
+
+figure:hover {
+    transition:  all 0s ease-in-out;
+    box-shadow: inset 0px 0px 8px rgba(179, 179, 179, 0.7), 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+footer {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    top: -30px;
+    left: -2.5%;
+}
+
+@media screen and (max-width: 992px){
+    section {
+        width: 40%;
+    }
+
+    footer {
+        left: -6.5%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    section {
+        width: 75%;
+    }
+
+    footer {
+        left: -12.5%;
+    }
+}
